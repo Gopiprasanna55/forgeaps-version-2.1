@@ -28,10 +28,11 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },
-  "scripts": {
-    "start": "node ./dist/index.ts",
-    "build": "tsc && npm run copy:assets",
-    "copy:assets": "copyfiles \"*.rvt\" dist/",
-    "dev": "nodemon ./index.ts"
-  }
+"scripts": {
+  "start": "node ./dist/index.js",
+  "build": "tsc && npm run copy:assets",
+  "copy:assets": "cp Revit_Template_Metric.rvt dist/ || true",
+  "dev": "nodemon ./index.ts"
+}
+
 }
