@@ -198,7 +198,7 @@ router.post("/callback/designautomation", async (req: Request, res: Response) =>
     );
     console.log(outputUrlRes);
     const revitdownloadurl=outputUrlRes.data.url;
-    
+
     console.log("revitdownloadurl",revitdownloadurl);
     downloadZip(revitdownloadurl,"outputFiles.zip");
     
@@ -249,7 +249,8 @@ router.post("/submit-workitem",upload.single('file'), async (req: Request, res: 
 //Download route
 
 router.get("/download/OutputFile", (req: Request, res: Response) => {
-  const filePath = path.join(__dirname, "./downloads/outputFiles.zip"); 
+ const filePath = path.join(__dirname, "dist", "downloads", "outputFiles.zip");
+
  
   res.download(filePath, "Output_Files.zip", (err) => {
     if (err) {
