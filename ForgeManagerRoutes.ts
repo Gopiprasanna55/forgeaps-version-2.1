@@ -198,6 +198,7 @@ router.post("/callback/designautomation", async (req: Request, res: Response) =>
     );
     console.log(outputUrlRes);
     const revitdownloadurl=outputUrlRes.data.url;
+    
     console.log("revitdownloadurl",revitdownloadurl);
     downloadZip(revitdownloadurl,"outputFiles.zip");
     
