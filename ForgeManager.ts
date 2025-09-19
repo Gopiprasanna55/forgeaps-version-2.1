@@ -3,6 +3,7 @@ import fs from 'fs';
 import axios from 'axios';
 import path from 'path';
 import AdmZip from 'adm-zip';
+import { CLIENT_RENEG_LIMIT } from 'tls';
 
 
 const FORGE_CLIENT_ID = process.env.FORGE_CLIENT_ID;
@@ -240,7 +241,7 @@ export async function submitRevitWorkItem(callbackURL: string): Promise<any> {
 
     onComplete: {
       verb: "post",
-      url: `${mycallbackurl}/forge/callback/designautomation?id=null&outputFileName=${outputFileName}&callbackURL=${callbackURL}`
+      url: `${process.env.HOST_DOMAIN_URL}/forge/callback/designautomation?id=null&outputFileName=${outputFileName}&callbackURL=${callbackURL}`
     }
   };
 
