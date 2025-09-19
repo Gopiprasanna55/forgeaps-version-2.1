@@ -1,0 +1,37 @@
+{
+  "name": "your-project",
+  "version": "1.0.0",
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "archiver": "^7.0.1",
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "forge-apis": "^0.9.11",
+    "multer": "^2.0.2",
+    "ngrok": "^5.0.0-beta.2",
+    "node-fetch": "^3.3.2",
+    "path": "^0.12.7",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "@types/archiver": "^6.0.3",
+    "@types/express": "^5.0.3",
+    "@types/forge-apis": "^0.9.7",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^24.3.3",
+    "@types/node-fetch": "^2.6.13",
+    "@types/socket.io": "^3.0.1",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "scripts": {
+    "start": "node ./dist/index.ts",
+    "build": "tsc && npm run copy:assets",
+    "copy:assets": "copyfiles \"*.rvt\" dist/",
+    "dev": "nodemon ./index.ts"
+  }
+}
