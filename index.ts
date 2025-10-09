@@ -8,7 +8,9 @@ import ForgeManagerRoutes from './ForgeManagerRoutes';
 const app = express();
 app.use(express.json());
 app.use('/forge', ForgeManagerRoutes);
-
+app.get("/api/hello", (req, res) => {
+  res.json({ message: "Hello, world!" });
+});
 app.listen(process.env.FORGE_HOSIT, () => {
   // const url=startNgrok(3000);
   console.log('Server running on port',process.env.FORGE_HOSIT);
