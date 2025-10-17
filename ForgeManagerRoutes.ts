@@ -200,10 +200,10 @@ router.post("/callback/designautomation", async (req: Request, res: Response) =>
     const revitdownloadurl=outputUrlRes.data.url;
     
     console.log("revitdownloadurl",revitdownloadurl);
-    downloadZip(revitdownloadurl,"outputFiles.zip");
+    downloadZip(revitdownloadurl,`${outputFileName}.zip`);
     
     const callbackDownload = await axios.post(callbackURL as string, {
-      zipPath: `${process.env.HOST_DOMAIN_URL}/forge/download/OutputFile`,
+      zipPath: `${process.env.HOST_DOMAIN_URL}/download/${outputFileName}.zip`,
     });
    
     clearUploadsFolder();
